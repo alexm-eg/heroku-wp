@@ -64,7 +64,7 @@ true && \
 	bin/composer update --ignore-platform-reqs && \
 	git add composer.lock && \
 	git commit -m "Initial commit for '$APP'" && \
-	git push heroku "$APP:master"
+	git push heroku "master:master"
 
 EXIT_CODE="$?"
 if [ "$EXIT_CODE" -ne "0" ]; then
