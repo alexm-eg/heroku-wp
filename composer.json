@@ -18,15 +18,14 @@
         "wordpress/wordpress": "*",
 
         "automattic/batcache": "dev-master",
-        "wpackagist-plugin/redis-cache": "~1",
-        "wpackagist-plugin/secure-db-connection": "~1",
+        "wpackagist-plugin/redis-cache": "^2.0.21",
+        "wpackagist-plugin/secure-db-connection": "^1.1.5",
 
-        "humanmade/s3-uploads": "~2",
+        "humanmade/s3-uploads": "^3.0.3",
         "wpackagist-plugin/jetpack": "*",
-        "wpackagist-plugin/sendgrid-email-delivery-simplified": "~1",
 
-        "predis/predis": "~1",
-        "wp-cli/wp-cli": "^2"
+        "predis/predis": "^1.1.7",
+        "wp-cli/wp-cli": "^2.5.0"
     },
     "suggest": {
         "wpackagist-plugin/cloudflare-cache-purge": "Purges cached pages on CF.",
@@ -37,16 +36,12 @@
             "type": "package",
             "package": {
                 "name": "wordpress/wordpress",
-                "version": "5.2.3",
+                "version": "5.8.1",
                 "dist": {
                     "type": "zip",
-                    "url": "https://github.com/wordpress/wordpress/archive/5.2.3.zip"
+                    "url": "https://github.com/wordpress/wordpress/archive/5.8.1.zip"
                 }
             }
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/xyu/batcache"
         },
         {
             "type": "composer",

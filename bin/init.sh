@@ -5,8 +5,11 @@ set -e -o pipefail
 # Creates a new Heroku app with the given name and adds required add-ons.
 #
 # Usage:
-# $ ./init.sh <APP-NAME>
+# $ ./init.sh <APP-NAME> <TEAM-NAME>
 #
+
+APP=$1
+TEAM=$2
 
 # Run preflight checks
 source "$(dirname ${BASH_SOURCE[0]})/check-prerequisites.sh"
@@ -18,10 +21,11 @@ curl -n -s \
 	-H "Content-Type: application/json" \
 	-d '{
 		"app": {
-			"name": "'$APP'"
+			"name": "'$APP'",
+			"team": "'$TEAM'"
 		},
 		"source_blob": {
-			"url": "https://github.com/xyu/heroku-wp/tarball/button"
+			"url": "https://github.com/alexm-eg/heroku-wp/tarball/button"
 		}
 	}'
 printf "\n\n" && sleep 10
@@ -57,7 +61,6 @@ heroku git:remote \
 # Make initial commit and deploy
 true && \
 	cd $APP_DIR && \
-	git checkout -b "$APP" && \
 	bin/composer update --ignore-platform-reqs && \
 	git add composer.lock && \
 	git commit -m "Initial commit for '$APP'" && \
