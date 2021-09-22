@@ -8,8 +8,8 @@ set -e -o pipefail
 # $ ./init.sh <APP-NAME> <TEAM-NAME>
 #
 
-APP=$0
-TEAM=$1
+APP=$1
+TEAM=$2
 
 # Run preflight checks
 source "$(dirname ${BASH_SOURCE[0]})/check-prerequisites.sh"
